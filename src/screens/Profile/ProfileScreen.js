@@ -107,7 +107,7 @@ const ProfileScreen = () => {
             </TouchableOpacity>
             <TouchableOpacity className="items-center ml-3" onPress={() => navigation.navigate("SubScreenListScreen", {suborFollow: false, user: email})}> 
               <Text className="mt-4 text-lg">{follows ? follows : 0} </Text>
-              <Text>Subscribe in</Text>
+              <Text>Subscribed to</Text>
             </TouchableOpacity>
           </View>
           <ProfileBio desc={ userData ? userData.bio : "No bio yet"} />

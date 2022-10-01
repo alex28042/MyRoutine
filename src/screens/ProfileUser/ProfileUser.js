@@ -153,7 +153,9 @@ const ProfileUser = ({ route }) => {
             </>
           }
           
-          {routinesName.length != 0 ? 
+        {subcribed ?
+          <>
+            {routinesName.length != 0 ? 
             <>
               {routinesName.map((e) => (
                 <>
@@ -169,6 +171,27 @@ const ProfileUser = ({ route }) => {
           : 
             <Text className="text-lg mt-10">No Routines yet</Text>
           }
+          </>
+        :  
+          <>
+            {routinesName.length != 0 ? 
+            <>
+              {routinesName.map((e) => (
+                <>
+                  <TouchableOpacity  key={e} className="bg-white w-3/4 h-20 mt-4 justify-center rounded-lg border-2">
+                    <View className="flex flex-row">
+                      <Ionicons name='barbell-outline' size={50} style={{marginLeft:19}}/>
+                      <Text className="mt-3 text-lg ml-4">{e} routine</Text>
+                    </View>
+                  </TouchableOpacity>
+                </>
+              ))}
+            </>
+          : 
+            <Text className="text-lg mt-10">No Routines yet</Text>
+          }
+          </>
+        }
         </View>
     </TailwindProvider>
   )

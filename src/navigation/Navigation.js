@@ -34,6 +34,8 @@ import storage from './Storage';
 import { useState } from 'react';
 import NotificationsScreenProfile from '../screens/Notifications/NotificationsScreen';
 import SubScreenListScreen from '../screens/SubcriberOrSubcription/SubScreenListScreen';
+import PasswordsScreen from '../screens/SignUp/PasswordsScreen';
+import { StripeProvider } from '@stripe/stripe-react-native';
 
 
 const Stack = createNativeStackNavigator();
@@ -49,37 +51,40 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login SignUp screen" component={LoginAndSignUpScreen} options={{headerShown: false, headerBackVisible: false}}/>
-        <Stack.Screen name="Login" component={LoginScreen} options={{headerTitle:"", headerTransparent: true}}/>
-        <Stack.Screen name="Register" component={SignUpScreen} options={{headerTitle:"", headerTransparent: true}}/>
-        <Stack.Screen name="MakeDescriptionTrainer" component={MakeDescriptionTrainer} options={{headerTitle:"", headerTransparent: true}}/>
-        <Stack.Screen name="UploadProfilePhoto" component={UploadProfilePhoto} options={{headerTitle:"", headerTransparent: true}}/>
-        <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} options={{headerTitle:"", headerTransparent: true}}/>
-        <Stack.Screen name="ConfirmResetPassword" component={ConfirmResetPassword} options={{headerTitle:"", headerTransparent: true}}/>
-        <Stack.Screen name="NewPasswordForgotten" component={NewPasswordForgotten} options={{headerTitle:"", headerTransparent: true}}/>
-        <Stack.Screen name="HomeScreen" component={TabNavigation} options={{headerBackVisible: false, headerShown: false}}/>
-        <Stack.Screen name="CreateRoutineHome" component={CreateRoutineHome} />
-        <Stack.Screen name="CreateRoutineNameDays" component={CreateRoutineNameDays} />
-        <Stack.Screen name="CreateRoutineExercisesDay" component={CreateRoutineExercisesDay} />
-        <Stack.Screen name="CreateRoutineNotes" component={CreateRoutineNotes} />
-        <Stack.Screen name="PromotionScreen" component={PromotionScreen} />
-        <Stack.Screen name="ProfileUser" component={ProfileUser} />
-        <Stack.Screen name="RoutineSelectDay" component={RoutineSelectDay} />
-        <Stack.Screen name="NotesViewScreen" component={NotesViewScreen} />
-        <Stack.Screen name="ExercisesScreen" component={ExercisesScreen} />
-        <Stack.Screen name="SubcriptionScreen" component={SubcriptionScreen} />
-        <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
-        <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
-        <Stack.Screen name="LenguageScreen" component={LenguageScreen} />
-        <Stack.Screen name="EditProfile" component={EditProfile} />
-        <Stack.Screen name="VinculateInstagram" component={VinculateInstagram} />
-        <Stack.Screen name="ChangePassword" component={ChangePassword} />
-        <Stack.Screen name="DeleteAccount" component={DeleteAccount} />
-        <Stack.Screen name="NotificationsScreen" component={NotificationsScreen} />
-        <Stack.Screen name="NotificationsScreenProfile" component={NotificationsScreenProfile} />
-        <Stack.Screen name="SubScreenListScreen" component={SubScreenListScreen} />
-      </Stack.Navigator>
+      <StripeProvider publishableKey='pk_test_51LiOtxKEbbYpdkJ18XhgKkboyB14CkI4T5kXZUzyBEp44T6pJRFz66N1vIujoGBkFNppOXSQ8oGUIRwl4ZXq4LFN00R0flZlpg'>
+        <Stack.Navigator>
+          <Stack.Screen name="Login SignUp screen" component={LoginAndSignUpScreen} options={{headerShown: false, headerBackVisible: false}}/>
+          <Stack.Screen name="Login" component={LoginScreen} options={{headerTitle:"", headerTransparent: true}}/>
+          <Stack.Screen name="Register" component={SignUpScreen} options={{headerTitle:"", headerTransparent: true}}/>
+          <Stack.Screen name="MakeDescriptionTrainer" component={MakeDescriptionTrainer} options={{headerTitle:"", headerTransparent: true}}/>
+          <Stack.Screen name="UploadProfilePhoto" component={UploadProfilePhoto} options={{headerTitle:"", headerTransparent: true}}/>
+          <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} options={{headerTitle:"", headerTransparent: true}}/>
+          <Stack.Screen name="ConfirmResetPassword" component={ConfirmResetPassword} options={{headerTitle:"", headerTransparent: true}}/>
+          <Stack.Screen name="NewPasswordForgotten" component={NewPasswordForgotten} options={{headerTitle:"", headerTransparent: true}}/>
+          <Stack.Screen name="HomeScreen" component={TabNavigation} options={{headerBackVisible: false, headerShown: false}}/>
+          <Stack.Screen name="CreateRoutineHome" component={CreateRoutineHome} />
+          <Stack.Screen name="CreateRoutineNameDays" component={CreateRoutineNameDays} />
+          <Stack.Screen name="CreateRoutineExercisesDay" component={CreateRoutineExercisesDay} />
+          <Stack.Screen name="CreateRoutineNotes" component={CreateRoutineNotes} />
+          <Stack.Screen name="PromotionScreen" component={PromotionScreen} />
+          <Stack.Screen name="ProfileUser" component={ProfileUser} />
+          <Stack.Screen name="RoutineSelectDay" component={RoutineSelectDay} />
+          <Stack.Screen name="NotesViewScreen" component={NotesViewScreen} />
+          <Stack.Screen name="ExercisesScreen" component={ExercisesScreen} />
+          <Stack.Screen name="SubcriptionScreen" component={SubcriptionScreen} />
+          <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
+          <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+          <Stack.Screen name="LenguageScreen" component={LenguageScreen} />
+          <Stack.Screen name="EditProfile" component={EditProfile} />
+          <Stack.Screen name="VinculateInstagram" component={VinculateInstagram} />
+          <Stack.Screen name="ChangePassword" component={ChangePassword} />
+          <Stack.Screen name="DeleteAccount" component={DeleteAccount} />
+          <Stack.Screen name="NotificationsScreen" component={NotificationsScreen} />
+          <Stack.Screen name="NotificationsScreenProfile" component={NotificationsScreenProfile} />
+          <Stack.Screen name="SubScreenListScreen" component={SubScreenListScreen} />
+          <Stack.Screen name="PasswordsScreen" component={PasswordsScreen} />
+        </Stack.Navigator>
+      </StripeProvider>
     </NavigationContainer>
   ) 
 }

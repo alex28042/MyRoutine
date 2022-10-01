@@ -27,7 +27,7 @@ const TabNavigation = () => {
     }>
       <Tab.Screen name='Home' component={HomeScreen} options={{tabBarIcon: ({focused}) => (focused ? <Ionicons name='home' size={20}/> : <Ionicons name='home-outline' size={20}/>)}} />
       <Tab.Screen name='Search' component={SearchScreen} options={{tabBarIcon: ({focused}) => (focused ? <Ionicons name='search' size={20}/> : <Ionicons name='search-outline' size={20}/>)}}/>
-      <Tab.Screen name='Routines' component={RoutinesScreen} options={{tabBarIcon: ({focused}) => (focused ? <Ionicons name='bar-chart' size={20}/> : <Ionicons name='bar-chart-outline' size={20}/>)}} />
+      <Tab.Screen name='Routines' component={RoutinesScreen} options={{tabBarIcon: ({focused}) => (focused ? <Ionicons name='document' size={20}/> : <Ionicons name='document-outline' size={20}/>)}} />
       <Tab.Screen name='Top Trainers' component={TopTrainersScreen} options={{tabBarIcon: ({focused}) => (focused ?   <Ionicons name='podium' size={20}/> : <Ionicons name='podium-outline' size={20}/>)}}/>
       <Tab.Screen name='Profile' component={ProfileScreen} 
         options={{headerRight: () => (
